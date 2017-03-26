@@ -13,11 +13,11 @@ import { PositiveVotesService } from "./positive-votes.service";
 import { NegativeVotesService } from "./negative-votes.service";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyC1vfJNQvyzdEB6bBPCzbmc5rdiQ3KHYks",
-    authDomain: "twinder-517fa.firebaseapp.com",
-    databaseURL: "https://twinder-517fa.firebaseio.com",
-    storageBucket: "twinder-517fa.appspot.com",
-    messagingSenderId: "307487647250"
+    apiKey: "AIzaSyDJkQ-IdBZvXxiEIBcTyG7iJA81PYc8FVg",
+    authDomain: "twittercrush-47430.firebaseapp.com",
+    databaseURL: "https://twittercrush-47430.firebaseio.com",
+    storageBucket: "twittercrush-47430.appspot.com",
+    messagingSenderId: "423758509117"
 };
 
 enableProdMode();
