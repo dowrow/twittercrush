@@ -1,6 +1,10 @@
 @import '~@angular/material/core/theming/prebuilt/indigo-pink.css';
 @import 'https://fonts.googleapis.com/icon?family=Material+Icons';
 
+body {
+  background-color: rgb(218, 223, 255);
+}
+
 .app-content {
   padding: 20px;
   text-align: center;
