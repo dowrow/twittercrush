@@ -404,12 +404,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var firebaseConfig = {
-    apiKey: "AIzaSyC1vfJNQvyzdEB6bBPCzbmc5rdiQ3KHYks",
-    authDomain: "twinder-517fa.firebaseapp.com",
-    databaseURL: "https://twinder-517fa.firebaseio.com",
-    storageBucket: "twinder-517fa.appspot.com",
-    messagingSenderId: "307487647250"
+    apiKey: "AIzaSyDJkQ-IdBZvXxiEIBcTyG7iJA81PYc8FVg",
+    authDomain: "twittercrush-47430.firebaseapp.com",
+    databaseURL: "https://twittercrush-47430.firebaseio.com",
+    storageBucket: "twittercrush-47430.appspot.com",
+    messagingSenderId: "423758509117"
 };
+__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["a" /* enableProdMode */])();
 var AppModule = (function () {
     function AppModule() {
     }
