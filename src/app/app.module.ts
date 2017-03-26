@@ -20,6 +20,8 @@ const firebaseConfig = {
     messagingSenderId: "307487647250"
 };
 
+enableProdMode();
+
 @NgModule({
   declarations: [
     AppComponent
