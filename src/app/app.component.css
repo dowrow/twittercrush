@@ -1,0 +1,87 @@
+@import '~@angular/material/core/theming/prebuilt/indigo-pink.css';
+@import 'https://fonts.googleapis.com/icon?family=Material+Icons';
+
+.app-content {
+  padding: 20px;
+  text-align: center;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.like-nah{
+  margin: 50px;
+}
+
+md-toolbar button {
+  margin: 5px;
+}
+
+.avatar {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  line-height: 50px;
+  margin-right: 10px;
+}
+
+.username {
+  font-size: 12pt;
+}
+
+.rating {
+  display: block;
+}
+
+.stats {
+  font-size: 12pt;
+  text-align: center;
+}
+
+.stats span {
+  display: block;
+}
+
+.friend-avatar {
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+}
+
+button i {
+  margin-right: 5px;
+}
+
+md-spinner {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  margin-top: 50px;
+  margin-left: -50px;
+  left: 50%;
+}
+
+md-card.wrap {
+  display: inline-block;
+  text-align: center;
+  margin: 10px;
+  width: 250px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+md-card.wrap md-card-content {
+  margin-top: 10px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  font-size: 12pt;
+}
+
+.close {
+  cursor: pointer;
+  font-size: 14pt;
+}

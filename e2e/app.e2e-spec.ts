@@ -1,6 +1,6 @@
 import { TwinderPage } from './app.po';
 
-describe('twinder App', () => {
+describe('wibber-lite App', () => {
   let page: TwinderPage;
 
   beforeEach(() => {

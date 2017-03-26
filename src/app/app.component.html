@@ -1,3 +1,104 @@
-<h1>
-  {{title}}
-</h1>
+<md-toolbar color="primary">
+  <span *ngIf="!user">Twitter Crush</span>
+  <img class="avatar" *ngIf="user" [src]="user.auth.photoURL"/>
+  <span *ngIf="user">
+    <span class="username">{{ user.auth.displayName }} </span>
+    <span class="rating"> 
+      <span *ngFor="let starValue of getStars()">
+        <i [class]="getStarClass(starValue)"></i> 
+      </span>
+    </span>
+  </span>
+
+  <span class="spacer"></span>
+
+  <span class="stats" *ngIf="user">
+    <span>Your current rating is: {{ getRating() }}/5 </span>
+    <span>You received {{ getVotesCount() }} votes</span>
+  </span>
+
+  <span class="spacer"></span>
+
+  <button *ngIf="user" md-raised-button color="accent" (click)="logout()">
+    <i class="fa fa-sign-out"></i> Sign out
+  </button>
+</md-toolbar>
+
+<div class="app-content">
+
+  <md-card class="wrap" *ngIf="loading">
+    <span class="md-card-title">Finding friends info...</span>
+    <md-spinner mode="indeterminate">
+    </md-spinner>
+  </md-card>
+
+  <md-card class="wrap" *ngIf="!user && !loading">
+    <md-card-title>
+      Welcome ✨
+    </md-card-title>
+    <md-card-subtitle>
+      Sign in to discover your rating
+    </md-card-subtitle>
+    <md-card-content>
+      <button class="social" md-raised-button color="accent" (click)="loginWithTwitter()">
+        <i class="fa fa-twitter"></i> Sign in with Twitter
+      </button>
+    </md-card-content>
+  </md-card>
+
+  <md-card *ngIf="user && !startedVoting && !loading" class="wrap">
+    <md-card-title>
+      Rate your friends 😍
+    </md-card-title>
+    <md-card-subtitle>
+      Nobody will know what you vote
+    </md-card-subtitle>
+    <md-card-content>
+      <button (click)="startVoting()" md-raised-button color="accent">
+        Start Rating Friends <i class="fa fa-arrow-right"></i>
+      </button>
+    </md-card-content>
+  </md-card>
+
+  <div *ngIf="user && getCurrentFriend() && startedVoting">
+    <md-card class="wrap like-nah">
+      <md-card-title>
+        Do you like <br/>
+        @{{ getCurrentFriend().screen_name }}?
+      </md-card-title>
+      <button (click)="nah()" md-raised-button color="primary"><i class="fa fa-close"></i> NAH</button>
+      <button (click)="like()" md-raised-button color="accent"><i class="fa fa-heart"></i> YES</button>
+    </md-card>
+    <br/>
+      <a href="https://twitter.com/{{ getCurrentFriend().screen_name }}/" target="_blank">
+        <md-card class="wrap">
+            <md-card-title>{{ getCurrentFriend().name }}</md-card-title>
+            <md-card-subtitle>@{{ getCurrentFriend().screen_name }}</md-card-subtitle>
+            <img class="friend-avatar" [src]="getCurrentFriend().profile_image_url_https"/>
+            <md-card-content>{{ getCurrentFriend().description }}</md-card-content>
+        </md-card>
+      </a>
+  </div>
+
+  <div *ngIf="user && !getCurrentFriend() && startedVoting">
+    <md-card class="wrap">
+      <md-card-title>
+        Great! 🎉
+      </md-card-title>
+      <md-card-subtitle>
+        You rated all your friends. <br/>
+        Share this website with them so they can rate you too!
+      </md-card-subtitle>
+    </md-card>
+  </div>
+</div>
+
+<md-toolbar *ngIf="!footerClosed" class="footer" layout="row" color="primary">
+  <span class="spacer"></span>
+  <span>Share this website with your friends so they can rate you too!&nbsp;&nbsp;</span>
+  <a href="https://twitter.com/share" class="twitter-share-button" data-show-count="false" data-size="large">Tweet</a>
+  <span class="spacer"></span>
+  <i (click)="closeFooter()" class="fa fa-close close"></i>
+</md-toolbar>
+
+
